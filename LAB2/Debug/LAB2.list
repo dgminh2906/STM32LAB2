@@ -622,7 +622,7 @@ static void MX_GPIO_Init(void)
 08000488 <HAL_TIM_PeriodElapsedCallback>:
 
 /* USER CODE BEGIN 4 */
-int counter1 = 50;
+int counter1 = 100;
 int counter2 = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8000488:	b580      	push	{r7, lr}
@@ -645,9 +645,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80004a4:	681b      	ldr	r3, [r3, #0]
  80004a6:	2b00      	cmp	r3, #0
  80004a8:	dc12      	bgt.n	80004d0 <HAL_TIM_PeriodElapsedCallback+0x48>
-			counter1 = 50;
+			counter1 = 100;
  80004aa:	4b15      	ldr	r3, [pc, #84]	; (8000500 <HAL_TIM_PeriodElapsedCallback+0x78>)
- 80004ac:	2232      	movs	r2, #50	; 0x32
+ 80004ac:	2264      	movs	r2, #100	; 0x64
  80004ae:	601a      	str	r2, [r3, #0]
 			update7SEG(index_led);
  80004b0:	4b14      	ldr	r3, [pc, #80]	; (8000504 <HAL_TIM_PeriodElapsedCallback+0x7c>)
