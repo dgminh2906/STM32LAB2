@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "software_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -145,23 +145,27 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setTimer1(100);
   int hour = 15, minute = 8, second = 50;
   while (1)
   {
-	  second ++;
-  	  if(second >= 60){
-  		  second = 0;
-  		  minute ++;
-  	  }
-  	  if(minute >= 60){
-  		  minute = 0;
-  		  hour ++;
-  	  }
-  	  if(hour >= 24){
-  		  hour = 0;
-  	  }
-  	  updateClockBuffer(hour, minute);
-  	  HAL_Delay(1000);
+	  if(timer1_flag == 1){
+		  setTimer1(100);
+		  second ++;
+		  if(second >= 60){
+			  second = 0;
+			  minute ++;
+		  }
+		  if(minute >= 60){
+			  minute = 0;
+			  hour ++;
+		  }
+		  if(hour >= 24){
+			  hour = 0;
+		  }
+		  updateClockBuffer(hour, minute);
+		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -293,7 +297,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-
+	timerRun();
 }
 
 /* USER CODE END 4 */
