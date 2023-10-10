@@ -168,7 +168,7 @@ int main(void)
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	  }
 	  if(timer2_flag == 1){
-		  setTimer2(25);
+		  setTimer2(100);
 		  update7SEG(index_led);
 		  index_led = (index_led + 1) % MAX_LED;
 	  }
