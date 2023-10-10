@@ -146,6 +146,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(100);
+  setTimer2(100);
   int hour = 15, minute = 8, second = 50;
   while (1)
   {
@@ -165,6 +166,11 @@ int main(void)
 		  }
 		  updateClockBuffer(hour, minute);
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	  }
+	  if(timer2_flag == 1){
+		  setTimer2(25);
+		  update7SEG(index_led);
+		  index_led = (index_led + 1) % MAX_LED;
 	  }
     /* USER CODE END WHILE */
 
