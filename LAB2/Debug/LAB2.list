@@ -375,8 +375,8 @@ int main(void)
   setTimer1(100);
  8000344:	2064      	movs	r0, #100	; 0x64
  8000346:	f000 f93f 	bl	80005c8 <setTimer1>
-  setTimer2(100);
- 800034a:	2064      	movs	r0, #100	; 0x64
+  setTimer2(25);
+ 800034a:	2019      	movs	r0, #25
  800034c:	f000 f950 	bl	80005f0 <setTimer2>
   int hour = 15, minute = 8, second = 50;
  8000350:	230f      	movs	r3, #15
@@ -445,8 +445,8 @@ int main(void)
  80003ac:	681b      	ldr	r3, [r3, #0]
  80003ae:	2b01      	cmp	r3, #1
  80003b0:	d1d4      	bne.n	800035c <main+0x34>
-		  setTimer2(100);
- 80003b2:	2064      	movs	r0, #100	; 0x64
+		  setTimer2(25);
+ 80003b2:	2019      	movs	r0, #25
  80003b4:	f000 f91c 	bl	80005f0 <setTimer2>
 		  update7SEG(index_led);
  80003b8:	4b0c      	ldr	r3, [pc, #48]	; (80003ec <main+0xc4>)
