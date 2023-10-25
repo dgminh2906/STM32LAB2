@@ -165,6 +165,7 @@ int main(void)
 		  }
 		  updateClockBuffer(hour, minute);
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 	  }
     /* USER CODE END WHILE */
 
