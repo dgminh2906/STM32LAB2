@@ -40,9 +40,9 @@ void timerRun(){
 		}
 	}
 	if(timer3_counter > 0){
-			timer3_counter--;
-			if(timer3_counter <= 0){
-				timer3_flag = 1;
-			}
+		timer3_counter--;
+		if(timer3_counter <= 0){
+			timer3_flag = 1;
+		}
 	}
 }

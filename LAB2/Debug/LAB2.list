@@ -1189,22 +1189,22 @@ void timerRun(){
  8000836:	681b      	ldr	r3, [r3, #0]
  8000838:	2b00      	cmp	r3, #0
  800083a:	dd0b      	ble.n	8000854 <timerRun+0x64>
-			timer3_counter--;
+		timer3_counter--;
  800083c:	4b0b      	ldr	r3, [pc, #44]	; (800086c <timerRun+0x7c>)
  800083e:	681b      	ldr	r3, [r3, #0]
  8000840:	3b01      	subs	r3, #1
  8000842:	4a0a      	ldr	r2, [pc, #40]	; (800086c <timerRun+0x7c>)
  8000844:	6013      	str	r3, [r2, #0]
-			if(timer3_counter <= 0){
+		if(timer3_counter <= 0){
  8000846:	4b09      	ldr	r3, [pc, #36]	; (800086c <timerRun+0x7c>)
  8000848:	681b      	ldr	r3, [r3, #0]
  800084a:	2b00      	cmp	r3, #0
  800084c:	dc02      	bgt.n	8000854 <timerRun+0x64>
-				timer3_flag = 1;
+			timer3_flag = 1;
  800084e:	4b08      	ldr	r3, [pc, #32]	; (8000870 <timerRun+0x80>)
  8000850:	2201      	movs	r2, #1
  8000852:	601a      	str	r2, [r3, #0]
-			}
+		}
 	}
 }
  8000854:	bf00      	nop
